@@ -13,12 +13,10 @@
 const NEED_UID = true; // 是否需要使用 cracked_uid 属性（慢）
 
 // 屏蔽规则写在这个函数里
-function do_filter(D) {
-    var ret = [];
-    D.forEach((d) => {
-        ret.push(d.ir_obj);
-    });
-    return ret;
+const do_filter = (D) => {
+    const ret = D.filter((ele, index) => ele.cracked_uid <= 2000000)
+    console.log(ret)
+    return ret
 }
 
 (function() {
